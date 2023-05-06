@@ -1,4 +1,3 @@
-from threading import Semaphore
 from queue import Queue
 import time
 
