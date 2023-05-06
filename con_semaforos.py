@@ -1,11 +1,11 @@
 from queue import Queue
 import time
-from threading import Thread, Semaphore
+from threading import Semaphore
 
 cola = Queue()
 semaforo = Semaphore(0)
 
-def productor():
+def prod_con():
     i = 1
     while True:
         cola.put(i)
@@ -14,16 +14,10 @@ def productor():
         semaforo.release()
         time.sleep(1)
 
-def consumidor():
+def cons_con():
     while True:
         semaforo.acquire()
         producto = cola.get()
         print(f"Producto {producto} consumido")
         cola.task_done()
         time.sleep(1)
-
-if __name__ == '__main__':
-    t1 = Thread(target=productor)
-    t2 = Thread(target=consumidor)
-    t1.start()
-    t2.start()

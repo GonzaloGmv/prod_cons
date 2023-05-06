@@ -3,7 +3,7 @@ import time
 
 cola = Queue()
 
-def productor():
+def prod_sin():
     i = 1
     while True:
         cola.put(i)
@@ -12,7 +12,7 @@ def productor():
         i += 1
         time.sleep(1)
 
-def consumidor():
+def cons_sin():
     while True:
         producto = cola.get()
         print(f"Producto {producto} consumido")
