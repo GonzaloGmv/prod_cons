@@ -1,6 +1,6 @@
 from threading import Thread
-from sin_semaforos import prod_sin, cons_sin
-from con_semaforos import prod_con, cons_con
+from codigo.sin_semaforos import prod_sin, cons_sin
+from codigo.con_semaforos import prod_con, cons_con
 import time
 
 def main():
